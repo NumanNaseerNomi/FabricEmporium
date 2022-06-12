@@ -7,21 +7,8 @@
 	<!-- <script src="{{asset('js/app.js') }}" defer></script> -->
 	<link href="{{ asset('css/style.css') }}" rel = "stylesheet" />
 	<link href="{{ asset('plugins/fontAwesome/css/fontAwesomeAll.min.css') }}" rel = "stylesheet">
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css"></script>
-
-
-	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-
-	<script src="js/jquery-3.5.1.min.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="assets/fontAwesome/css/fontAwesomeAll.min.css">
-
-
-
-
+	<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
+	<!-- <script src="js/jquery-3.5.1.min.js"></script> -->
 </head>
 <body>
 <div class="container-fluid bg-clr fw-normal fs-6 text-white">
