@@ -17,6 +17,7 @@ mix.copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/plugins/bo
 mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/plugins/bootstrap/');
 
 mix.copy('resources/plugins/fontAwesome', 'public/plugins/fontAwesome/');
+mix.copy('resources/images/logos', 'public/images/logos/');
 
 mix.postCss('resources/css/style.css', 'public/css');
 
