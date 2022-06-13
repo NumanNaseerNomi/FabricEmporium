@@ -5,9 +5,9 @@
 	<title>Fabric Emporieum Online</title>
 	<link href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/fontAwesome/css/fontAwesomeAll.min.css') }}" rel = "stylesheet">
-	<!-- <script src="{{asset('js/app.js') }}" defer></script> -->
 	<link href="{{ asset('css/style.css') }}" rel = "stylesheet" />
 	
+	<!-- <script src="{{asset('js/app.js') }}" defer></script> -->
 	<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 	<!-- <script src="js/jquery-3.5.1.min.js"></script> -->
 </head>
@@ -15,7 +15,6 @@
 	<div class="container-fluid bg-clr fw-normal fs-6 text-white">
 		<div class="d-flex justify-content-center text-white">Shop our Latest Collection of Unstitched Fabrics, Ready to Wear and more.</div>
 	</div>
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-white mb-3 border-bottom">
 		<div class="container">
 			<a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/brandLogo.png')}}"></a>
@@ -117,5 +116,5 @@
 				</ul>
 			</div>
 		</div>
-</div>
+	</div>
 
