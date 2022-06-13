@@ -1,4 +1,85 @@
 @include('Components.header')
+<div class="container">
+	<div class="row">
+		<div class="bar-links">
+			<ul class="bar-link-list d-flex justify-content-center  fs-5">
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Summer Collection</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Winter Collection</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Ladies</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Gents</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Bride</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Groom</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Kids</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+				<li class="list-item mx-3">
+					<div class="dropdown">
+						<a  class="drop dropdown-toggle" type="button">Party Wear</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Stiched</a></li>
+							<li><a href="{{ url('#') }}" class="dropdown-item" type="button">Un-Stiched</a></li>   
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
 <div class="container-fluid">
 	<div class="row mt-4 mb-4">
 		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">

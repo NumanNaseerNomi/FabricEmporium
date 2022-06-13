@@ -6,7 +6,7 @@
 	<link href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/fontAwesome/css/fontAwesomeAll.min.css') }}" rel = "stylesheet">
 	<link href="{{ asset('css/style.css') }}" rel = "stylesheet" />
-	
+
 	<!-- <script src="{{asset('js/app.js') }}" defer></script> -->
 	<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
 	<!-- <script src="js/jquery-3.5.1.min.js"></script> -->
@@ -29,14 +29,14 @@
 					</form>
 				</ul>
 				<ul class="icons">
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('#') }}"><i class="fal fa-user"></i></a></li>
+					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/profile') }}"><i class="fal fa-user"></i></a></li>
 					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('#') }}"><i class="fal fa-shopping-bag"></i></a></li>
 					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('#') }}"><i class="fal fa-heart"></i></a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="container">
+	<!-- <div class="container">
 		<div class="row">
 			<div class="bar-links">
 				<ul class="bar-link-list d-flex justify-content-center  fs-5">
@@ -116,5 +116,5 @@
 				</ul>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
