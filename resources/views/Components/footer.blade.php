@@ -49,4 +49,5 @@
 			</div>
 		</div> 
 	</body>
+	<script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
 </html>
