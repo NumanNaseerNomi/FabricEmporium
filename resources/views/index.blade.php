@@ -113,7 +113,7 @@
 			</div>
 			<div class="row mb-4">
 				@for($i=0; $i<=3; $i++)
-					<div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+					<div class=" col-lg-3 col-md-6 col-sm-12">
 						<a href="{{ url('#') }}"><img src="https://i.pinimg.com/236x/df/ed/00/dfed0051cf3051df61dfd545a50e02b2.jpg" class="img-thumbnail" alt="..."></a>
 					</div>
 				@endfor

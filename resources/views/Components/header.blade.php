@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Fabric Emporieum Online</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/fontAwesome/css/fontAwesomeAll.min.css') }}" rel = "stylesheet">
 	<link href="{{ asset('css/style.css') }}" rel = "stylesheet" />

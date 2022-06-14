@@ -14,7 +14,9 @@
        margin:0px;
        background-color: white;
    }
-
+   input.form-control.me-2 {
+    margin-left: 0px !important;
+}
 .container-fluid.bg-clr {
     background-color: #df6589ff;
 }
