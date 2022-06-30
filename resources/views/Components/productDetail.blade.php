@@ -26,7 +26,6 @@
                         </div>
                         <div class="stock pb-4 border-bottom">
                             <h5>Availabilty : <span class="fs-6">In stock</span></h5>
-                            
                         </div>
                         <div class="cart-section pt-4 ">
                             <div class="row">
@@ -39,7 +38,7 @@
                                 </div>
                                 <div class="col-6">
                                     <div class="btn-group">
-                                        <a href="{{ url('/myBag') }}" class="btn btn-outline-success">Add to Cart</a>
+                                        <button type="button" onclick="addToCart('6664', '#quantity')" class="btn btn-outline-success" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close">Add to Cart</button>
                                     </div>
                                 </div>
                             </div>
@@ -52,6 +51,31 @@
 </div>
 
 <script>
+    function addToCart(productID, quantity)
+    {
+
+        console.log(productID, document.querySelector(quantity).value);
+
+        const data = { username: 'example' };
+
+        fetch('/addToCart',
+            {
+                method: 'GET', // or 'PUT'
+                headers: {'Content-Type': 'application/json',},
+                body: JSON.stringify(data),
+            }
+        )
+        .then(response => response.json())
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch((error) => {
+        console.error('Error:', error);
+        });
+        // alert("addToCartButton");
+    }
+</script>
+<!-- <script>
     function incrementValue(argument)
     {
         document.querySelector(argument).value++;
@@ -66,4 +90,4 @@
             element.value--;
         }
     }
-</script>
+</script> -->
