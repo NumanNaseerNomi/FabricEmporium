@@ -27,9 +27,9 @@
             <td>Small</td>
             <td>
                 <div class="input-group w-75 align-middle justify-content-center">
-                    <button id="minusButton" class="btn btn-outline-primary" type="button" onclick='decrementValue("#quantity");minus("#price,#total");'>-</button>
+                    <button id="minusButton" class="btn btn-outline-primary" type="button" onclick='decrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>-</button>
                     <input type="number" id="quantity" class="form-control border-primary text-center" style="width:20px" value="1" min="1">
-                    <button id="plusButton" class="btn btn-outline-primary" type="button" onclick='incrementValue("#quantity");add("#price,#total");'>+</button>
+                    <button id="plusButton" class="btn btn-outline-primary" type="button" onclick='incrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>+</button>
                 </div>
             </td>
             <td id="price">PKR 1000</td>
@@ -40,6 +40,7 @@
     </table>
 </div>
 @include('Components.footer')
+
 <script>
     function incrementValue(argument)
     {
@@ -55,35 +56,11 @@
             element.value--;
         }
     }
-</script>
-
-<script>
-    let plusButton = document.querySelector('#plusButton');
-    plusButton.onclick(
-        () =>
-        {
-            console.log(plusButton);
-        }
-    );
     
-
-    function add(price, total)
+    function updateTotalPrice(price, quantity, total)
     {
-        price = document.querySelector(total);
-        price = parseFloat(price.innerHTML.split(" ")[1]);
-
-        // total = document.querySelector(total);
-        // total = parseFloat(total.innerHTML.split(" ")[1]);
-        console.log(price);
-    }
-
-    function minus(argument)
-    {
-        let element = document.querySelector(argument);
-        
-        if(element.value>1)
-        {
-            element.value--;
-        }
+        price = parseFloat(document.querySelector(price).innerHTML.split(" ")[1]);
+        quantity = parseFloat(document.querySelector(quantity).value);
+        document.querySelector(total).innerHTML = "PKR " + (price * quantity);
     }
 </script>
