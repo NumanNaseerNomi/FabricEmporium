@@ -52,3 +52,20 @@
 	<script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js') }}"></script>
 	<!-- <script src="{{asset('js/main.js') }}"></script> -->
 </html>
+
+<script>
+    function incrementValue(argument)
+    {
+        document.querySelector(argument).value++;
+    }
+
+    function decrementValue(argument)
+    {
+        let element = document.querySelector(argument);
+        
+        if(element.value>1)
+        {
+            element.value--;
+        }
+    }
+</script>
