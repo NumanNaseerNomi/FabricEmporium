@@ -37,7 +37,7 @@
 							</span>
 						</a>
 					</li>
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/signup') }}"><i class="fal fa-user"></i></a></li>
+					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/myProfile') }}"><i class="fal fa-user"></i></a></li>
 				</ul>
 			</div>
 		</div>
