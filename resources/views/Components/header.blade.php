@@ -18,7 +18,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light bg-white mb-3 border-bottom">
 		<div class="container">
-			<a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/brandLogo.png')}}"></a>
+			<a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/headerLogo.png')}}"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -30,9 +30,14 @@
 					</form>
 				</ul>
 				<ul class="icons">
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/profile') }}"><i class="fal fa-user"></i></a></li>
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('#') }}"><i class="fal fa-shopping-bag"></i></a></li>
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('#') }}"><i class="fal fa-heart"></i></a></li>
+					<li class="me-5 mt-4">
+						<a class="fa-icon position-relative" href="{{ url('/myBag') }}"><i class="fal fa-shopping-bag"></i>
+							<span class="position-absolute start-100 bottom-0 translate-middle px-1 opacity-75  bg-dark fs-6 rounded-circle text-white">
+								9+
+							</span>
+						</a>
+					</li>
+					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/signup') }}"><i class="fal fa-user"></i></a></li>
 				</ul>
 			</div>
 		</div>
