@@ -9,5 +9,9 @@
     "/plugins/fontAwesome/webfonts/fa-regular-400.woff2": "/plugins/fontAwesome/webfonts/fa-regular-400.woff2",
     "/plugins/fontAwesome/webfonts/fa-solid-900.woff2": "/plugins/fontAwesome/webfonts/fa-solid-900.woff2",
     "/images/logos/brandLogo.png": "/images/logos/brandLogo.png",
-    "/images/logos/footerLogo.png": "/images/logos/footerLogo.png"
+    "/images/logos/brandLogoBlue.png": "/images/logos/brandLogoBlue.png",
+    "/images/logos/brandLogoBrown.png": "/images/logos/brandLogoBrown.png",
+    "/images/logos/brandLogoWhite.png": "/images/logos/brandLogoWhite.png",
+    "/images/logos/footerLogo.png": "/images/logos/footerLogo.png",
+    "/images/logos/headerLogo.png": "/images/logos/headerLogo.png"
 }
