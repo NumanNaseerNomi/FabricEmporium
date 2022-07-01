@@ -3,7 +3,7 @@
 				<div class="row border-bottom px-4 py-5">
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 center">
 						<div class="footer-logo">
-							<a href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/footerLogo.png')}}"></a>
+							<a href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/brandLogoWhite.png')}}"></a>
 						</div>
 					</div>
 					<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">

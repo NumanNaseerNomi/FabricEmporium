@@ -18,7 +18,7 @@
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light bg-white mb-3 border-bottom">
 		<div class="container">
-			<a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/headerLogo.png')}}"></a>
+			<a class="navbar-brand" href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/brandLogoBrown.png')}}"></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
