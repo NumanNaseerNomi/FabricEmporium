@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowMoreController;
+use App\Http\Controllers\SignAuthController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +18,21 @@ use App\Http\Controllers\ShowMoreController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [HomeController::class, "home"]);
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 
-Route::get('/', [HomeController::class, "index"]);
+
+
+//Route::get('/', [HomeController::class, "index"]);
 
 Route::get('/profile', [ProfileController::class, "viewProfile"]);
 Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);
+Route::get('/signup', [SignAuthController::class, "showSignup"]);
+//Route::get('/show/cart', [CartController::class, "viewCart"]);
+Route::get('/place-order', function () {
+    return view('placeorder');
+});
+
+Route::get('/myBag', function () {
+    return view('myBag');
+});
