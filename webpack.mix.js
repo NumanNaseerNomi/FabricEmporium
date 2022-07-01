@@ -20,5 +20,6 @@ mix.copy('resources/plugins/fontAwesome', 'public/plugins/fontAwesome/');
 mix.copy('resources/images/logos', 'public/images/logos/');
 
 mix.postCss('resources/css/style.css', 'public/css');
+// mix.copy('resources/js/main.js', 'public/js');
 
 
