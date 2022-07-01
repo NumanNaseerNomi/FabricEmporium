@@ -1,6 +1,11 @@
 /node_modules
 /public/hot
 /public/storage
+/public/css
+/public/js
+/public/images
+/public/plugins
+/public/mix-manifest.json
 /storage/*.key
 /vendor
 .env
@@ -12,7 +17,3 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-/public/css
-/public/js
-/public/images
-/public/mix-manifest.json
