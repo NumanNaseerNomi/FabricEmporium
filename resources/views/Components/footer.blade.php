@@ -1,6 +1,6 @@
 		<div class="container-fluid bg-clr">
 			<div class="container pt-4 pb-4">
-				<div class="row border-bottom">
+				<div class="row border-bottom px-4 py-5">
 				<div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 center">
 						<div class="footer-logo">
 							<a href="{{ url('/') }}"><img class="logo" src="{{ asset('images/logos/footerLogo.png')}}"></a>
@@ -10,13 +10,13 @@
 						<div class="footer-heading ">
 							<h4 class="text-white">Get In Touch</h4>
 							<div class="footer-address">
-								<p class="text-white fs-5">Address<br />
+								<p class="text-white fs-6">Address<br />
 									<span class="text-white font">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.</span>
 								</p>
-								<p class="text-white fs-5">Phone<br />
+								<p class="text-white fs-6">Phone<br />
 									<span class="text-white font">042-7383839</span>
 								</p>
-								<p class="text-white fs-5">Email<br />
+								<p class="text-white fs-6">Email<br />
 									<span class="text-white font">abc@gmail.com</span>
 								</p>
 							</div>
@@ -49,5 +49,6 @@
 			</div>
 		</div> 
 	</body>
-	<script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js') }}" defer></script>
+	<script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js') }}"></script>
+	<!-- <script src="{{asset('js/main.js') }}"></script> -->
 </html>
