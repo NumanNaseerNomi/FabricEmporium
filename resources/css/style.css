@@ -81,7 +81,9 @@ li.list-item {
     color: black;
 }
 
-
+.color {
+    color: red;
+}
 /* a.drop.dropdown-toggle::after {
     display: none !important;
 } */

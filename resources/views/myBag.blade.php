@@ -1,6 +1,13 @@
 @include('Components.header')
 @include('Components.navbar')
 
+<div class="container">
+    <div class="row ">
+        <div class="col-6 fw-bold fs-5">My Wishlist</div>
+        <div class="col-6 fw-bold fs-5">My Bag</div>
+    </div>
+</div>
+
 
 <div class="container overflow-auto">
     
@@ -14,7 +21,7 @@
             <th scope="col">Quantity</th>
             <th scope="col">Price</th>
             <th scope="col">Total Price</th>
-            <th scope="col">Remove</th>
+            <th scope="col">Edit Card</th>
         </tr>
     </thead>
     <tbody>
@@ -34,7 +41,7 @@
             </td>
             <td id="price">PKR 1000</td>
             <td id="total">PKR 5000</td>
-            <td>remove</td>
+            <td><i class="far fa-trash-alt mx-1 fs-5 color"></i> <i class="far fa-eye mx-1 fs-5">@for($i=0; $i<=3; $i++) @include('Components.productDetail')@endfor</i> </td>
         </tr>
     </tbody>
     </table>
