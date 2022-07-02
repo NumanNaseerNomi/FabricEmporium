@@ -13,14 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Banners',
+        Schema::create('Users',
             function (Blueprint $table)
             {
                 $table->id();
-                $table->string('image');
-                $table->string('description')->nullable();
-                $table->dateTime('expiryAt');
-                $table->boolean('isActive');
+                $table->string('name');
+                $table->string('email')->unique();
+                $table->string('password');
+                $table->string('contactNumber');
+                $table->string('address');
+                $table->boolean('isAdmin')->default(0);;
             }
         );
     }
@@ -32,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Banners');
+        Schema::dropIfExists('Users');
     }
 };

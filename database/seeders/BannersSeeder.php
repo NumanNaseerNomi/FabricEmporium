@@ -15,7 +15,7 @@ class BannersSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('banners')->insert(
+        DB::table('Banners')->insert(
             [
                 'image' => 'images/banners/bannerLogoBlue.jpg',
                 'description' => 'Banner with blue logo.',
@@ -24,7 +24,7 @@ class BannersSeeder extends Seeder
             ]
         );
 
-        DB::table('banners')->insert(
+        DB::table('Banners')->insert(
             [
                 'image' => 'images/banners/bannerLogoBrown.jpg',
                 'description' => 'Banner with brown logo.',
@@ -33,7 +33,7 @@ class BannersSeeder extends Seeder
             ]
         );
 
-        DB::table('banners')->insert(
+        DB::table('Banners')->insert(
             [
                 'image' => 'images/banners/bannerLogoWhite.jpg',
                 'description' => 'Banner with white logo.',

@@ -19,13 +19,8 @@ use App\Http\Controllers\CartController;
 |
 */
 Route::get('/', [HomeController::class, "home"]);
+Route::get('/myProfile', [ProfileController::class, "viewProfile"]);
 
-
-
-
-//Route::get('/', [HomeController::class, "index"]);
-
-Route::get('/profile', [ProfileController::class, "viewProfile"]);
 Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);
 Route::get('/signup', [SignAuthController::class, "showSignup"]);
 //Route::get('/show/cart', [CartController::class, "viewCart"]);
@@ -35,4 +30,9 @@ Route::get('/place-order', function () {
 
 Route::get('/myBag', function () {
     return view('myBag');
+});
+
+
+Route::post('/addToCart', function (Request $request) {
+    return $request;
 });
