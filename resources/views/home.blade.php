@@ -82,29 +82,7 @@
 	</div> 
 </div> -->
 <div class="container-fluid">
-	<div class="row mt-4 mb-4">
-		<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-			<div class="carousel-inner">
-				<div class="carousel-item active">
-					<img src="https://img.freepik.com/free-vector/slider-zip-with-jeans-texture_134830-780.jpg?t=st=1655060824~exp=1655061424~hmac=3cc22f176330e23d5dc712671e04c2e3154633816cebf242e611ad4aa2efda87&w=1060"class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="https://pbs.twimg.com/media/B_H-2r9U0AAopJH.jpg"class="d-block w-100" alt="...">
-				</div>
-				<div class="carousel-item">
-					<img src="https://3.bp.blogspot.com/-iLWBDhpF1_I/UxYhztmRToI/AAAAAAAARHM/Fsj4Eo3kxaU/w1200-h630-p-k-no-nu/Khaadi-Lawn.jpg"class="d-block w-100" alt="...">
-				</div>
-			</div>
-			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Previous</span>
-			</button>
-			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="visually-hidden">Next</span>
-			</button>
-		</div>
-	</div>
+	@include('Components.banners')
 	<div class="container">
 		@for($i=0; $i<=3; $i++)
 			<div class="row mb-4">
