@@ -1,6 +1,6 @@
 @include('Components.header')
 @include('Components.navbar')
-<div class="container-fluid">
+<div class="container">
     <div class="row mb-4">
         <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4"><a href=""><img class="brand-logo" src="{{ asset('images/logos/brandLogoBrown.png')}}"></a></div>
         <div class="col-xl-2 col-lg-2 col-md-4 col-sm-4"><a href=""><img class="brand-logo" src="{{ asset('images/logos/brandLogoBrown.png')}}"></a></div>
