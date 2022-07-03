@@ -39,7 +39,7 @@
                                 </div> -->
                                 <div class="col-12">
                                     <div class="btn-group w-100">
-                                        <button type="button" onclick="addToCart('6664', '#quantity')" class="btn btn-outline-success" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close">Add to Bag<i class="fal fa-shopping-bag fs-5 mx-2"></i></button>
+                                        <button type="button" onclick="addToCart('6664', '#quantity')" class="btn btn-outline-success" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close"><i class="fal fa-shopping-bag fs-5 mx-2"></i>Add to Bag</button>
                                     </div>
                                 </div>
                             </div>
