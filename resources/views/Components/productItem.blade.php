@@ -7,7 +7,7 @@
         <div class=" bg-danger text-white fw-bold position-absolute top-0 start-0 p-1 m-1 rounded">
   20% OFF 
 </div>
-<button type="button" class="btn btn-primary position-absolute top-0 end-0 m-1">
+<button type="button" class="btn btn-danger position-absolute top-0 end-0 m-1">
 <i class="far fa-heart" ></i>
 </button>
             <h5 class="card-title ">Card title</h5>
