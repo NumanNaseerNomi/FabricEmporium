@@ -46,7 +46,7 @@
                                 <td id="price">PKR 1000</td>
                                 <!-- <td id="total">PKR 5000</td> -->
                                 <td>
-                                    <button type="button" class="btn btn-outline-primary"><i class="far fa-eye"></i></button>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
                                     <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
                                 </td>
                             </tr>
@@ -90,9 +90,11 @@
                                 <td id="price">PKR 1000</td>
                                 <td id="total">PKR 5000</td>
                                 <td>
-                                    <button type="button" class="btn btn-outline-primary"><i class="far fa-eye"></i></button>
+                                    
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
                                     <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
                                 </td>
+                                @include('Components.productDetail')
                             </tr>
                         </tbody>
                     </table>
