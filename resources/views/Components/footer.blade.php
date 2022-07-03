@@ -1,3 +1,4 @@
+	<footer>
 		<div class="container-fluid bg-clr">
 			<div class="container pt-4 pb-4">
 				<div class="row border-bottom px-4 py-5">
@@ -48,7 +49,8 @@
 				</div>
 			</div>
 		</div> 
-	</body>
+	</footer>
+</body>
 	<script src="{{asset('plugins/bootstrap/bootstrap.bundle.min.js') }}"></script>
 	<!-- <script src="{{asset('js/main.js') }}"></script> -->
 </html>
