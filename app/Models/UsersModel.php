@@ -10,4 +10,5 @@ class UsersModel extends Model
     use HasFactory;
 
     protected $table = 'Users';
+    
 }
