@@ -28,24 +28,12 @@ class CreateDatabase extends Command
      */
     public function handle()
     {
-        $dbName = env('DB_DATABASE');
+        $sql = "CREATE SCHEMA IF NOT EXISTS " . env('DB_DATABASE') . " DEFAULT CHARACTER SET utf8";
 
-        if(DB::connection()->getDatabaseName())
-        {
-            $this->info(" Database <" . $dbName . "> already exists.");
-        }
-        else
-        {
-            $serverName = env('DB_HOST');
-            $userName = env('DB_USERNAME');
-            $password = env('DB_PASSWORD');
-            $sql = "CREATE DATABASE " . $dbName;
+        $conn = mysqli_connect(env('DB_HOST'), env('DB_USERNAME'), env('DB_PASSWORD'));
+        $status = mysqli_query($conn, $sql);
+        mysqli_close($conn);
 
-            $conn = mysqli_connect($serverName, $userName, $password);
-            mysqli_query($conn, $sql);
-            mysqli_close($conn);
-
-            $this->info(" Database <" . $dbName . "> created successfully.");
-        }
+        $this->info("Done");
     }
 }
