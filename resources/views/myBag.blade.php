@@ -13,7 +13,7 @@
     <div class="row">
         <div class=" col-12 col-md-6 mb-3">
             <div class="card" style="width:100% !important;">
-                <h5 class="card-header">My Wishlist</h5>
+                <h5 class="card-header"><i class="fal fa-heart me-1"></i>My Wishlist</h5>
                 <div class="card-body overflow-auto">
                     <table class="table table-bordered table-striped table-hover text-center align-middle table-responsive">
                         <thead>
@@ -48,6 +48,7 @@
                                 <td>
                                     <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
                                     <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
+                                    <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
                                 </td>
                             </tr>
                         </tbody>
@@ -57,7 +58,7 @@
         </div>
         <div class="col-12 col-md-6 mb-4">
             <div class="card" style="width:100% !important;">
-                <h5 class="card-header">My Bag</h5>
+                <h5 class="card-header"><i class="fal fa-shopping-bag"></i> My Bag</h5>
                 <div class="card-body overflow-auto">
                     <table class="table table-bordered table-striped table-hover text-center align-middle table-responsive">
                         <thead>
