@@ -1,62 +1,36 @@
 @include('Components.header')
 <div class="container mb-5">
-    <div class="row">
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">First Name</label>
-                <input type="text" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Last Name</label>
-                <input type="text" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Contact Number</label>
-                <input type="number" class="form-control" id="inputEmail4">
-            </div>
-            <!-- <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
-            </div> -->
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-            </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Delivery Address</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-            </div>
-            <!-- <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>
-            <div class="col-12">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+    <div class="card">
+        <h5 class="card-header">My Profile</h5>
+        <div class="card-body">
+            <form action="{{ url('/updateProfile') }}" method="post">
+                <div class="row g-3">
+                    @csrf
+                    <input type="text" value="{{Session::get('user')->id}}" name="id" hidden required>
+                    <div class="col-md-6">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" value="{{Session::get('user')->name}}" name="name" class="form-control" id="name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" value="{{Session::get('user')->email}}" name="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="contactNumber" class="form-label">Contact Number</label>
+                        <input type="number" value="{{Session::get('user')->contactNumber}}" name="contactNumber" class="form-control" id="contactNumber" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" value="{{Session::get('user')->address}}" name="address" class="form-control" id="address" required>
+                    </div>
+                    <div class="col-12  mb-3">
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </div>
                 </div>
-            </div> -->
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Save</button>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 @include('Components.footer')
