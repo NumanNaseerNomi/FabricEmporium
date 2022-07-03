@@ -22,11 +22,14 @@ use Illuminate\Http\Request;
 |
 */
 Route::get('/', [HomeController::class, "home"]);
-Route::get('/myProfile', [ProfileController::class, "viewProfile"]);
+Route::get('/myProfile', [ProfileController::class, "viewProfile"])->middleware(['ifAuth']);
+
+Route::get('/login', [AuthController::class, "authView"])->middleware(['ifAuth']);
+Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifAuth']);
+Route::get('/logout', [AuthController::class, "logout"])->middleware(['ifAuth']);
 
 Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);
-// Route::get('/signup', [SignAuthController::class, "showSignup"]);
-//Route::get('/show/cart', [CartController::class, "viewCart"]);
+
 Route::get('/place-order', function () {
     return view('placeorder');
 });
@@ -40,27 +43,5 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::post('/addToCart', function (Request $request) {
-    return $request;
-});
-
-Route::get('/signup', function () {
-    return view('signUp');
-});
-
-Route::get('/login', [AuthController::class, "authView"]);
-Route::post('/login', [AuthController::class, "loginAuth"]);
-
 Route::post('/register', [AuthController::class, "registerAuth"]);
-Route::get('/logout', [AuthController::class, "logout"]);
-// Route::get('/login', function () {
-//     return view('authenticate');
-// });
 
-// Route::post('/login', function (Request $request) {
-//     return $request;
-// });
-
-// Route::post('/register', function (Request $request) {
-//     return $request;
-// });
