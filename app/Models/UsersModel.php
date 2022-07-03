@@ -10,4 +10,6 @@ class UsersModel extends Model
     use HasFactory;
 
     protected $table = 'Users';
+    protected $fillable = ['name', 'email', 'contactNumber', 'address'];
+    public $timestamps = false;
 }

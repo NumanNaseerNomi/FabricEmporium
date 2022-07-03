@@ -23,6 +23,7 @@ use Illuminate\Http\Request;
 */
 Route::get('/', [HomeController::class, "home"]);
 Route::get('/myProfile', [ProfileController::class, "viewProfile"])->middleware(['ifAuth']);
+Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->middleware(['ifAuth']);
 
 Route::get('/login', [AuthController::class, "authView"])->middleware(['ifAuth']);
 Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifAuth']);
