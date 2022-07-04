@@ -45,3 +45,6 @@ Route::get('/dashboard', function () {
 
 Route::post('/register', [AuthController::class, "registerAuth"]);
 
+Route::get('/test', function () {
+    return view('admin.');
+});
