@@ -38,7 +38,23 @@
 							</span>
 						</a>
 					</li>
-					<li class="me-5 mt-4"><a class="fa-icon" href="{{ url('/myProfile') }}"><i class="fal fa-user"></i></a></li>
+					<li class="me-5 mt-4">
+						<!-- <a class="fa-icon" href="{{ url('/myProfile') }}"> -->
+					<div class="dropdown">
+						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						<i class="fal fa-user"></i>
+						</a>
+
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+							<li><a class="dropdown-item" href="#">User name</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#"><i class="fal fa-power-off me-2"></i>Logout</a></li>
+							
+						</ul>
+					</div>
+						<!-- <i class="fal fa-user"></i> -->
+					<!-- </a> -->
+				</li>
 				</ul>
 			</div>
 		</div>
