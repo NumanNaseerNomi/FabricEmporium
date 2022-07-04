@@ -36,3 +36,8 @@ Route::get('/place-order', function () {
 Route::get('/myBag', function () {
     return view('myBag');
 });
+
+// admin routes
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
