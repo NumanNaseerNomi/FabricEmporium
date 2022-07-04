@@ -41,12 +41,12 @@
 					<li class="me-5 mt-4">
 						<!-- <a class="fa-icon" href="{{ url('/myProfile') }}"> -->
 					<div class="dropdown">
-						<a class="btn dropdown-toggle fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="dropdown-toggle-t text-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 						<i class="fal fa-user"></i>
 						</a>
 
 						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<li><a class="dropdown-item" href="#">User name</a></li>
+							<li><a class="dropdown-item" href="#"><i class="fal fa-user me-2"></i>User name</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="#"><i class="fal fa-power-off me-2"></i>Logout</a></li>
 							
