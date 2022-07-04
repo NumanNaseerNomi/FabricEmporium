@@ -41,7 +41,7 @@
 					<li class="me-5 mt-4">
 						<!-- <a class="fa-icon" href="{{ url('/myProfile') }}"> -->
 					<div class="dropdown">
-						<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+						<a class="btn dropdown-toggle fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
 						<i class="fal fa-user"></i>
 						</a>
 
