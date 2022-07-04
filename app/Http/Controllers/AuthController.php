@@ -8,9 +8,9 @@ use App\Models\UsersModel;
 
 class AuthController extends Controller
 {
-    function authView()
+    function loginView()
     {
-        return view("authenticate");
+        return view("login");
     }
 
     function loginAuth(Request $request)
@@ -36,6 +36,11 @@ class AuthController extends Controller
         }
     }
 
+    function registerView()
+    {
+        return view("register");
+    }
+    
     function registerAuth(Request $request)
     {
         return $request;

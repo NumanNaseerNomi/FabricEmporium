@@ -25,7 +25,9 @@ Route::get('/', [HomeController::class, "home"]);
 Route::get('/myProfile', [ProfileController::class, "viewProfile"])->middleware(['ifAuth']);
 Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->middleware(['ifAuth']);
 
-Route::get('/login', [AuthController::class, "authView"])->middleware(['ifAuth']);
+Route::get('/register', [AuthController::class, "registerView"]);
+Route::post('/register', [AuthController::class, "registerAuth"]);
+Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifAuth']);
 Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifAuth']);
 Route::get('/logout', [AuthController::class, "logout"])->middleware(['ifAuth']);
 
@@ -44,7 +46,6 @@ Route::get('/dashboard', function () {
     return view('admin.dashboard');
 });
 
-Route::post('/register', [AuthController::class, "registerAuth"]);
 
 Route::get('/test', function () {
     return view('admin.');
