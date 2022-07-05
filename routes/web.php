@@ -25,10 +25,10 @@ Route::get('/', [HomeController::class, "home"]);
 Route::get('/myProfile', [ProfileController::class, "viewProfile"])->middleware(['ifAuth']);
 Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->middleware(['ifAuth']);
 
-Route::get('/register', [AuthController::class, "registerView"]);
-Route::post('/register', [AuthController::class, "registerAuth"]);
-Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifAuth']);
-Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifAuth']);
+Route::get('/register', [AuthController::class, "registerView"])->middleware(['ifGuest']);
+Route::post('/register', [AuthController::class, "registerAuth"])->middleware(['ifGuest']);
+Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifGuest']);
+Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifGuest']);
 Route::get('/logout', [AuthController::class, "logout"])->middleware(['ifAuth']);
 
 Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);

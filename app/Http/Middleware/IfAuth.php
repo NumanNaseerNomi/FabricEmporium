@@ -6,7 +6,7 @@ use Closure;
 use Session;
 use Illuminate\Http\Request;
 
-class IfAdminMiddleware
+class IfAuth
 {
     /**
      * Handle an incoming request.
@@ -17,13 +17,26 @@ class IfAdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Session::get('user') && Session::get('user')->isAdmin)
+        // $path = $request->path();
+
+        // if($path == 'login' && Session::get('user'))
+        // {
+        //     return redirect('/');
+        // }
+        // else if($path != 'login' && !Session::get('user'))
+        // {
+        //     return redirect('/login');
+        // }
+        
+        // return $next($request);
+
+        if(Session::get('user'))
         {
             return $next($request);
         }
         else
         {
-            return redirect('/');
+            return redirect('/login');
         }
     }
 }

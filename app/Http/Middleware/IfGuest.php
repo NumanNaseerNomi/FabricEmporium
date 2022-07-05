@@ -6,7 +6,7 @@ use Closure;
 use Session;
 use Illuminate\Http\Request;
 
-class IfAuthMiddleware
+class IfGuest
 {
     /**
      * Handle an incoming request.
@@ -17,17 +17,13 @@ class IfAuthMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        $path = $request->path();
-
-        if($path == 'login' && Session::get('user'))
+        if(Session::get('user'))
         {
             return redirect('/');
         }
-        else if($path != 'login' && !Session::get('user'))
+        else
         {
-            return redirect('/login');
+            return $next($request);
         }
-        
-        return $next($request);
     }
 }
