@@ -43,7 +43,21 @@ class AuthController extends Controller
     
     function registerAuth(Request $request)
     {
-        return $request;
+        $request->validate(
+            [
+                '_token' => 'required',
+                'name' => 'required',
+                'email' => 'required',
+                'contactNumber' => 'required',
+                'address' => 'required',
+                'password' => 'required|confirmed',
+            ]
+        );
+
+        $request->merge(['password' => Hash::make($request->password)]);
+        $user = UsersModel::create($request->all());
+        $request->session()->put('user', $user);
+        return redirect('/');
     }
 
     function logout(Request $request)
