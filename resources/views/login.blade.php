@@ -18,6 +18,13 @@
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </div>
+                <div class="col-12">
+                    <a href="{{ url('/passwordReset') }}"><span class="text-decoration-none">Forgot Password?</span> Reset.</a>
+                </div>
+                <hr/>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a class="btn btn-outline-primary" href="{{ url('/Register') }}" role="button">Register</a>
+                </div>
             </form>
         </div>
     </div>
