@@ -8,6 +8,7 @@ use App\Http\Controllers\ShowMoreController;
 // use App\Http\Controllers\SignAuthController;
 // use App\Http\Controllers\CartController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ManageProducts as ManageProductsController;
 
 
 use Illuminate\Http\Request;
@@ -31,6 +32,10 @@ Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifGuest
 Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifGuest']);
 Route::get('/logout', [AuthController::class, "logout"])->middleware(['ifAuth']);
 
+Route::get('/manageProducts', [ManageProductsController::class, "viewProducts"]);
+Route::post('/manageProducts', [ManageProductsController::class, "updateProduct"]);
+Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"]);
+
 Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);
 
 Route::get('/place-order', function () {
@@ -41,12 +46,6 @@ Route::get('/myBag', function () {
     return view('myBag');
 });
 
-// admin routes
-Route::get('/dashboard', function () {
-    return view('admin.dashboard');
-});
-
-
 Route::get('/test', function () {
-    return view('admin.');
+    return view('manageProducts');
 });
