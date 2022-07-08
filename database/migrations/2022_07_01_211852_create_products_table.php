@@ -18,14 +18,14 @@ return new class extends Migration
             {
                 $table->id();
                 $table->string('title');
-                $table->string('brand')->nullable();
+                $table->string('brand');
                 $table->string('description')->nullable();
                 $table->float('price', 8, 2);
                 $table->integer('discount')->nullable();
                 $table->integer('quantity');
-                $table->string('tags')->nullable();
+                $table->string('category');
                 $table->string('image');
-                $table->boolean('isActive');
+                $table->string('status');
             }
         );
     }
