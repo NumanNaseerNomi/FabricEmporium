@@ -12,12 +12,14 @@
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="name">
-                            <h3>Fabric Name</h3>
+                            <h3>{{ $product->title }}</h3>
                         </div>
                         <div class="type">
-                            <h6>Stich.Unstich</h6>
+                            <h6><strong>Brand:</strong></h6>
+                            <h6>{{ $product->brand }}</h6>
                         </div>
                         <div class="price mb-2">
+                            <h6><strong>Price:</strong></h6>
                             <h6>
                                 @if($product->discount > 0)
                                     <span class="text-decoration-line-through text-danger">PKR {{ $product->price }}</span>
@@ -26,11 +28,18 @@
                             </h6>
                         </div>
                         <div class="description mb-3">
-                            <h5 class="product-detail">Detail</h5>
+                            <h6><strong>Detail:</strong></h6>
                             <p>{{ $product->description }}</p>
                         </div>
                         <div class="stock pb-4 border-bottom">
-                            <h5>Availabilty : <span class="fs-6">In stock</span></h5>
+                            <h6><strong>Availability:</strong></h6>
+                            <h6>
+                                @if($product->quantity > 0)
+                                    <span class="text-primary">In stock</span>
+                                @else
+                                    <span class="text-danger">Out of stock</span>
+                                @endif
+                            </h6>
                         </div>
                         <div class="cart-section pt-4 ">
                             <div class="row">

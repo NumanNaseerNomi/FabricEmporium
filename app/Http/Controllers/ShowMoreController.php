@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Products as ProductsModel;
 
 class ShowMoreController extends Controller
 {
-    function showMore(){
+    function showMore(Request $request)
+    {
+        $request->validate(
+            [
+                '_token' => 'required',
+                'category' => 'required',
+            ]
+        );
 
-        return view("showMore");
+        $products = ProductsModel::where('category', $request->category)->get();
+        // dd($products);
+        return view("showMore", ["products"=>$products]);
     }
 }

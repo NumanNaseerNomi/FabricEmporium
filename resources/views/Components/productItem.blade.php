@@ -8,7 +8,8 @@
             <button type="button" class="btn btn-danger position-absolute top-0 end-0 m-1" onClick="addToMyWishlist({{ $product->id }})">
                 <i class="far fa-heart" ></i>
             </button>
-            <h5 class="card-title ">{{ $product->title }}</h5>
+            <h5 class="card-title">{{ $product->title }}</h5>
+            <p class="card-title">{{ $product->brand }}</p>
             <p class="card-text">
                 @if($product->discount > 0)
                     <span class="text-decoration-line-through text-danger">PKR {{ $product->price }}</span>

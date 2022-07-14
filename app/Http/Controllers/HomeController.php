@@ -10,11 +10,11 @@ class HomeController extends Controller
     function home()
     {
         $bannersModel = BannersModel::where('isActive', 1)->where('expiryAt', '>', now())->get();
-        $categorys = ProductsModel::all()->unique('category')->sortBy('category')->pluck('category')->toArray();
+        $categories = ProductsModel::all()->unique('category')->sortBy('category')->pluck('category')->toArray();
 
         $productsByCategory = null;
         
-        foreach($categorys as $category)
+        foreach($categories as $category)
         {
             $productsByCategory[$category] = ProductsModel::where('category', $category)->paginate(4);
         }
@@ -22,9 +22,10 @@ class HomeController extends Controller
         $data = 
         [
             "banners" => $bannersModel,
-            "categorys" => $categorys,
+            "categories" => $categories,
             "productsByCategory" => $productsByCategory,
         ];
+        // dd($data);
         
         return view("home", $data);
     }

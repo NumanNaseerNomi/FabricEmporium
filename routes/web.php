@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+// use Illuminate\Support\Facades\Mail;
+// use App\Mail\TestEmail;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
@@ -28,6 +30,10 @@ Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->midd
 
 Route::get('/register', [AuthController::class, "registerView"])->middleware(['ifGuest']);
 Route::post('/register', [AuthController::class, "registerAuth"])->middleware(['ifGuest']);
+
+// Route::get('/verifyOTP', [AuthController::class, "verifyOTPView"])->middleware(['ifGuest']);
+Route::post('/verifyOTP', [AuthController::class, "verifyOTP"])->middleware(['ifGuest']);
+
 Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifGuest']);
 Route::post('/login', [AuthController::class, "loginAuth"])->middleware(['ifGuest']);
 Route::get('/logout', [AuthController::class, "logout"])->middleware(['ifAuth']);
@@ -36,7 +42,7 @@ Route::get('/manageProducts', [ManageProductsController::class, "viewProducts"])
 Route::post('/manageProducts', [ManageProductsController::class, "updateProduct"]);
 Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"]);
 
-Route::get('/showMore', [ShowMoreController::class, "ShowMore"]);
+Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
 
 Route::get('/place-order', function () {
     return view('placeorder');
@@ -48,4 +54,15 @@ Route::get('/myBag', function () {
 
 Route::get('/test', function () {
     return view('manageProducts');
+});
+
+Route::get('/testEmail', function () {
+    $mailData = 
+    [
+        "name" => "NOMi",
+        "dob" => "654312"
+    ];
+
+    Mail::to("numan.naseer.nomi@gmail.com")->send(new TestEmail($mailData));
+    dd("sent");
 });
