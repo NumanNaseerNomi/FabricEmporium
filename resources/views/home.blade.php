@@ -84,24 +84,24 @@
 <div class="container-fluid">
 	@include('Components.banners')
 	<div class="container">
-		@for($i=0; $i<=3; $i++)
+		@foreach($categorys as $category)
 			<div class="row mb-4">
 				<div class="d-flex heading justify-content-center">
-					<h2 class="fw-bold">Summer Collection Title</h2>
+					<h2 class="fw-bold">{{ $category }}</h2>
 				</div>
 			</div>
 			<div class="row mb-4">
-				@for($j=0; $j<=3; $j++)
+				@foreach($productsByCategory[$category] as $product)
 					@include('Components.productItem')
 					@include('Components.productDetail')
-				@endfor
+				@endforeach
 			</div>
 			<div class="row mb-5">
 				<div class="d-flex justify-content-center">
 					<a class="btn bg-clr rounded-pill px-4 py-2 fs-6 text-white" href="{{ url('/showMore') }}">View More</a>
 				</div>
 			</div>
-		@endfor
+		@endforeach
 	</div>
 </div>
 <!-- <div class="container">

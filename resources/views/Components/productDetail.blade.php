@@ -1,14 +1,14 @@
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="product{{ $product->id }}Modal" tabindex="-1" aria-labelledby="product{{ $product->id }}ModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Card title</h5>
+                <h5 class="modal-title" id="product{{ $product->id }}ModalLabel">{{ $product->title }}</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="row mx-4">
                     <div class="col-12 col-lg-6">
-                        <img class="img-fluid" src="https://i.pinimg.com/236x/df/ed/00/dfed0051cf3051df61dfd545a50e02b2.jpg">
+                        <img class="img-fluid" src="{{ asset('storage/images/products/' . $product->image) }}">
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="name">
@@ -18,11 +18,16 @@
                             <h6>Stich.Unstich</h6>
                         </div>
                         <div class="price mb-2">
-                            <h6>Rs. 2,340</h6>
+                            <h6>
+                                @if($product->discount > 0)
+                                    <span class="text-decoration-line-through text-danger">PKR {{ $product->price }}</span>
+                                @endif
+                                <span>PKR {{ ceil($product->price - (($product->price * $product->discount) / 100)) }}</span>
+                            </h6>
                         </div>
                         <div class="description mb-3">
                             <h5 class="product-detail">Detail</h5>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>{{ $product->description }}</p>
                         </div>
                         <div class="stock pb-4 border-bottom">
                             <h5>Availabilty : <span class="fs-6">In stock</span></h5>
