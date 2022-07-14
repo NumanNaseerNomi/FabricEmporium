@@ -25,7 +25,6 @@ class HomeController extends Controller
             "categories" => $categories,
             "productsByCategory" => $productsByCategory,
         ];
-        // dd($data);
         
         return view("home", $data);
     }

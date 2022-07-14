@@ -17,7 +17,7 @@ class ShowMoreController extends Controller
         );
 
         $products = ProductsModel::where('category', $request->category)->get();
-        // dd($products);
+        
         return view("showMore", ["products"=>$products]);
     }
 }
