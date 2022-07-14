@@ -43,14 +43,12 @@ Route::post('/manageProducts', [ManageProductsController::class, "updateProduct"
 Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"])->middleware(['ifAdmin']);
 
 Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
+Route::get('/myBag', function () {return view('myBag');})->middleware(['ifAuth']);
 
 Route::get('/place-order', function () {
     return view('placeorder');
 });
 
-Route::get('/myBag', function () {
-    return view('myBag');
-});
 
 Route::get('/test', function () {
     return view('manageProducts');

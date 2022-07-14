@@ -31,31 +31,32 @@
 					</form>
 				</ul>
 				<ul class="icons">
+					@if(Session::get('user'))
+						<li class="me-5 mt-4">
+							<a class="fa-icon position-relative" href="{{ url('/myBag') }}"><i class="fal fa-shopping-bag"></i>
+								<span class="position-absolute start-100 bottom-0 translate-middle px-1 opacity-75  bg-dark fs-6 rounded-circle text-white">
+									9+
+								</span>
+							</a>
+						</li>
+					@endif
 					<li class="me-5 mt-4">
-						<a class="fa-icon position-relative" href="{{ url('/myBag') }}"><i class="fal fa-shopping-bag"></i>
-							<span class="position-absolute start-100 bottom-0 translate-middle px-1 opacity-75  bg-dark fs-6 rounded-circle text-white">
-								9+
-							</span>
-						</a>
+						<div class="btn-group">
+							<a class="dropdown-toggle-t text-dark" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="fal fa-user"></i>
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end">
+								@if(Session::get('user'))
+									<li><a class="dropdown-item" href="{{ url('/myProfile') }}"><i class="fal fa-user me-2"></i>{{Session::get('user')->name}}</a></li>
+									<li><a class="dropdown-item" href="{{ url('/manageProducts') }}"><i class="fal fa-user-cog me-2"></i>Admin Panel</a></li>
+									<hr class="dropdown-divider">
+									<li><a class="dropdown-item" href="{{ url('/logout') }}"><i class="fal fa-power-off me-2"></i>Logout</a></li>
+								@else
+									<li><a class="dropdown-item" href="{{ url('/login') }}"><i class="fas fa-sign-in  me-2"></i>Login</a></li>
+								@endif
+							</ul>
+						</div>
 					</li>
-					<li class="me-5 mt-4">
-						<!-- <a class="fa-icon" href="{{ url('/myProfile') }}"> -->
-					<div class="btn-group">
-						<a class="dropdown-toggle-t text-dark" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fal fa-user"></i>
-						</a>
-						<ul class="dropdown-menu dropdown-menu-end">
-							@if(Session::get('user'))
-								<li><a class="dropdown-item" href="{{ url('/myProfile') }}"><i class="fal fa-user me-2"></i>{{Session::get('user')->name}}</a></li>
-								<li><a class="dropdown-item" href="{{ url('/manageProducts') }}"><i class="fal fa-user-cog me-2"></i>Admin</a></li>
-								<hr class="dropdown-divider">
-								<li><a class="dropdown-item" href="{{ url('/logout') }}"><i class="fal fa-power-off me-2"></i>Logout</a></li>
-							@else
-								<li><a class="dropdown-item" href="{{ url('/login') }}"><i class="fas fa-sign-in  me-2"></i>Login</a></li>
-							@endif
-						</ul>
-					</div>
-				</li>
 				</ul>
 			</div>
 		</div>
