@@ -53,15 +53,3 @@ Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])
 Route::get('/place-order', function () {
     return view('placeorder');
 });
-
-
-Route::get('/testEmail', function () {
-    $mailData = 
-    [
-        "name" => "NOMi",
-        "dob" => "654312"
-    ];
-
-    Mail::to("numan.naseer.nomi@gmail.com")->send(new TestEmail($mailData));
-    dd("sent");
-});
