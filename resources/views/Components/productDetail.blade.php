@@ -31,7 +31,7 @@
                             <h6><strong>Detail:</strong></h6>
                             <p>{{ $product->description }}</p>
                         </div>
-                        <div class="stock pb-4 border-bottom">
+                        <div>
                             <h6><strong>Availability:</strong></h6>
                             <h6>
                                 @if($product->quantity > 0)
@@ -41,23 +41,23 @@
                                 @endif
                             </h6>
                         </div>
-                        <div class="cart-section pt-4 ">
+                        <!-- <div class="cart-section pt-4 ">
                             <div class="row">
-                                <!-- <div class="col-6">
+                                <div class="col-6">
                                     <div class="input-group mb-3">
                                         <p class="fs-5" > Add to bag</p>
                                         <button class="btn btn-outline-primary" type="button" onclick='decrementValue("#quantity")'>-</button>
                                         <input type="number" id="quantity" class="form-control border-primary text-center" value="1" min="1">
                                         <button class="btn btn-outline-primary" type="button" onclick='incrementValue("#quantity")'>+</button>
                                     </div> 
-                                </div> -->
+                                </div>
                                 <div class="col-12">
                                     <div class="btn-group w-100">
                                         <button type="button" onclick="addToCart('6664', '#quantity')" class="btn btn-outline-success" data-bs-dismiss="modal" data-bs-target="#my-modal" aria-label="Close"><i class="fal fa-shopping-bag fs-5 mx-2"></i>Add to Bag</button>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
