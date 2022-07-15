@@ -9,7 +9,7 @@ class ProfileController extends Controller
 {
     function viewProfile()
     {
-        return view("components.profile");
+        return view("profile");
     }
 
     function updateProfile(Request $request)
@@ -18,7 +18,6 @@ class ProfileController extends Controller
             [
                 "_token" => "required",
                 "name" => "required",
-                "email" => "required",
                 "contactNumber" => "required",
                 "address" => "required",
             ]
