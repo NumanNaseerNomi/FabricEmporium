@@ -46,6 +46,7 @@ Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"]
 Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
 
 Route::get('/myBag', [BagController::class, "showBag"]);
+Route::post('/addtoWishlist', [BagController::class, "addtoWishlist"]);
 Route::post('/removeItem', [BagController::class, "removeItem"]);
 
 Route::get('/place-order', function () {

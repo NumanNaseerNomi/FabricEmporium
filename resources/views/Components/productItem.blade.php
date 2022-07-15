@@ -5,9 +5,11 @@
             @if($product->discount > 0)
                 <div class="bg-danger text-white fw-bold position-absolute top-0 start-0 p-1 m-1 rounded">{{ $product->discount }}% OFF</div>
             @endif
-            <button type="button" class="btn btn-danger position-absolute top-0 end-0 m-1" onClick="addToMyWishlist({{ $product->id }})">
-                <i class="far fa-heart" ></i>
-            </button>
+            <form method="post" action="{{ url('/addtoWishlist') }}">
+                @csrf
+                <input type="number" name="id" value="{{ $product->id }}" hidden required />
+                <button type="submit" class="btn btn-danger position-absolute top-0 end-0 m-1"><i class="far fa-heart"></i></button>
+            </form>
             <h5 class="card-title">{{ $product->title }}</h5>
             <p class="card-title">{{ $product->brand }}</p>
             <p class="card-text">
@@ -22,10 +24,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    function addToMyWishlist(id)
-    {
-        alert(id + " is added to your wishlist, you can checkout later.");
-    }
-</script>
