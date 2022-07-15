@@ -32,7 +32,7 @@ Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->midd
 Route::get('/register', [AuthController::class, "registerView"])->middleware(['ifGuest']);
 Route::post('/register', [AuthController::class, "registerAuth"])->middleware(['ifGuest']);
 
-// Route::get('/verifyOTP', [AuthController::class, "verifyOTPView"])->middleware(['ifGuest']);
+Route::get('/verifyOTP', [AuthController::class, "verifyOTPView"])->middleware(['ifGuest']);
 Route::post('/verifyOTP', [AuthController::class, "verifyOTP"])->middleware(['ifGuest']);
 
 Route::get('/login', [AuthController::class, "loginView"])->middleware(['ifGuest']);

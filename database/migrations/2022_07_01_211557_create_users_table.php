@@ -22,7 +22,9 @@ return new class extends Migration
                 $table->string('password');
                 $table->string('contactNumber');
                 $table->string('address');
-                $table->boolean('isAdmin')->default(0);;
+                $table->boolean('isAdmin')->default(0);
+                $table->boolean('isActive')->default(0);
+                $table->string('otp')->nullable();
             }
         );
     }
