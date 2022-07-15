@@ -1,21 +1,16 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Fabric Emporieum Online</title>
+	<title>Fabric Emporium Online</title>
 	<link rel="icon" type="image/x-icon" href="{{asset('images/logos/favicon.png')}}">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="{{ asset('plugins/bootstrap/bootstrap.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('plugins/fontAwesome/css/fontAwesomeAll.min.css') }}" rel = "stylesheet">
 	<link href="{{ asset('css/style.css') }}" rel = "stylesheet" />
-
-	<!-- <script src="{{asset('js/app.js') }}" defer></script> -->
-	<!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-	<!-- <script src="js/jquery-3.5.1.min.js"></script> -->
 </head>
 <body>
 	<div class="container-fluid bg-clr fw-normal fs-6 text-white">
-		<div class="d-flex justify-content-center text-white">Shop our Latest Collection of Unstitched Fabrics, Ready to Wear and more.</div>
+		<div class="d-flex justify-content-center text-white">Shop our Latest Collection of Un-stitched Fabrics, Ready to Wear and more.</div>
 	</div>
 	<nav class="navbar navbar-expand-lg navbar-light bg-white mb-3 border-bottom">
 		<div class="container">
@@ -31,15 +26,13 @@
 					</form>
 				</ul>
 				<ul class="icons">
-					@if(Session::get('user'))
-						<li class="me-5 mt-4">
-							<a class="fa-icon position-relative" href="{{ url('/myBag') }}"><i class="fal fa-shopping-bag"></i>
-								<span class="position-absolute start-100 bottom-0 translate-middle px-1 opacity-75  bg-dark fs-6 rounded-circle text-white">
-									9+
-								</span>
-							</a>
-						</li>
-					@endif
+					<li class="me-5 mt-4">
+						<a class="fa-icon position-relative" href="{{ url('/myBag') }}"><i class="fal fa-shopping-bag"></i>
+							@if(Session::get('user'))
+								<span class="position-absolute bottom-50 start-100 translate-middle p-1 bg-danger rounded-circle"></span>
+							@endif
+						</a>
+					</li>
 					<li class="me-5 mt-4">
 						<div class="btn-group">
 							<a class="dropdown-toggle-t text-dark" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
