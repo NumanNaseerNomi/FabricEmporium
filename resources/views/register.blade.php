@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <hr/>
-                <p>Already Registered?</p>
+                <span>Already Registered?</span>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <a class="btn btn-outline-primary" href="{{ url('/login') }}" role="button">Login</a>
                 </div>
