@@ -23,7 +23,7 @@
                 </div>
                 <hr/>
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <a class="btn btn-outline-primary" href="{{ url('/Register') }}" role="button">Register</a>
+                    <a class="btn btn-outline-primary" href="{{ url('/register') }}" role="button">Register</a>
                 </div>
             </form>
         </div>
