@@ -25,7 +25,7 @@ class Bag extends Controller
         return view("myBag", $data);
     }
 
-    function addtoWishlist(Request $request)
+    function addToWishlist(Request $request)
     {
         $userId = Session::get('user')->id;
         $item = BagModel::where('userId', $userId)->where('productId', $request->id)->where('quantity', null)->get();

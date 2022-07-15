@@ -46,17 +46,14 @@ Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"]
 Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
 Route::get('/myBag', function () {return view('myBag');})->middleware(['ifAuth']);
 
-Route::get('/myBag', [BagController::class, "showBag"]);
-Route::post('/addtoWishlist', [BagController::class, "addtoWishlist"]);
-Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"]);
+Route::get('/myBag', [BagController::class, "showBag"])->middleware(['ifAuth']);
+Route::post('/addToWishlist', [BagController::class, "addToWishlist"])->middleware(['ifAuth']);
+Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])->middleware(['ifAuth']);
 
 Route::get('/place-order', function () {
     return view('placeorder');
 });
 
-// Route::get('/myBag', function () {
-//     return view('myBag');
-// });
 
 Route::get('/test', function () {
     return view('manageProducts');

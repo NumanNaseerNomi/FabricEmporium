@@ -5,7 +5,7 @@
             @if($product->discount > 0)
                 <div class="bg-danger text-white fw-bold position-absolute top-0 start-0 p-1 m-1 rounded">{{ $product->discount }}% OFF</div>
             @endif
-            <form method="post" action="{{ url('/addtoWishlist') }}">
+            <form method="post" action="{{ url('/addToWishlist') }}">
                 @csrf
                 <input type="number" name="id" value="{{ $product->id }}" hidden required />
                 <button type="submit" class="btn btn-danger position-absolute top-0 end-0 m-1"><i class="far fa-heart"></i></button>
