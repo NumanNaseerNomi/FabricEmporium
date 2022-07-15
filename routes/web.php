@@ -49,3 +49,7 @@ Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])
 Route::get('/place-order', function () {
     return view('placeorder');
 });
+
+Route::get('/changePassword', function () {
+    return view('changePassword');
+});
