@@ -1,102 +1,88 @@
 @include('Components.header')
-@include('Components.navbar')
-
-<!-- <div class="container">
-    <div class="row ">
-        <div class="col-6 fw-bold fs-5">My Wishlist</div>
-        <div class="col-6 fw-bold fs-5">My Bag</div>
-    </div>
-</div> -->
-
-
 <div class="container ">
     <div class="row">
-        <div class=" col-12 col-md-6 mb-3">
+        <div class=" col-12 col-md-5 mb-3">
             <div class="card" style="width:100% !important;">
                 <h5 class="card-header"><i class="fal fa-heart me-1"></i>My Wishlist</h5>
                 <div class="card-body overflow-auto">
                     <table class="table table-bordered table-striped table-hover text-center align-middle table-responsive">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
-                                <!-- <th scope="col">Size</th>
-                                <th scope="col">Quantity</th> -->
                                 <th scope="col">Price</th>
-                                <!-- <th scope="col">Total Price</th> -->
-                                <th scope="col">Edit Card</th>
+                                <th scope="col">Manage</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td >
-                                    <img style="width:50px;" src="https://i.pinimg.com/236x/df/ed/00/dfed0051cf3051df61dfd545a50e02b2.jpg" class="img-tmbnail">
-                                </td>
-                                <td>Shirt</td>
-                                <!-- <td>Small</td> -->
-                                <!-- <td>
-                                    <div class="input-group w-75 align-middle justify-content-center">
-                                        <button id="minusButton" class="btn btn-outline-primary" type="button" onclick='decrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>-</button>
-                                        <input type="number" id="quantity" class="form-control border-primary text-center" style="width:20px" value="1" min="1">
-                                        <button id="plusButton" class="btn btn-outline-primary" type="button" onclick='incrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>+</button>
-                                    </div>
-                                </td> -->
-                                <td id="price">PKR 1000</td>
-                                <!-- <td id="total">PKR 5000</td> -->
-                                <td>
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
-                                    <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
-                                    <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
-                                </td>
-                            </tr>
+                            @foreach($myWishlist as $item)
+                                <tr>
+                                    <td >
+                                        <img style="width:50px;" src="{{ asset('storage/images/products/' . $item->productDetail->image) }}" class="img-tmbnail">
+                                    </td>
+                                    <td>{{ $item->productDetail->title }}</td>
+                                    <td>
+                                        @if($item->productDetail->discount > 0)
+                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
+                                            <br/>
+                                        @endif
+                                        <span>PKR {{ ceil($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) }}</span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
+                                        {{-- <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button> --}}
+                                        <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
+                                        <form method="post" action="{{ url('/removeFromWishlist') }}">
+                                            @csrf
+                                            <input type="number" name="id" value="{{ $item->id }}" hidden required />
+                                            <button type="submit" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-        <div class="col-12 col-md-6 mb-4">
+        <div class="col-12 col-md-7 mb-4">
             <div class="card" style="width:100% !important;">
                 <h5 class="card-header"><i class="fal fa-shopping-bag"></i> My Bag</h5>
                 <div class="card-body overflow-auto">
                     <table class="table table-bordered table-striped table-hover text-center align-middle table-responsive">
                         <thead>
                             <tr>
-                                <th scope="col">#</th>
                                 <th scope="col">Image</th>
                                 <th scope="col">Title</th>
-                                <!-- <th scope="col">Size</th> -->
-                                <!-- <th scope="col">Quantity</th> -->
+                                <th scope="col">Quantity</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Total Price</th>
-                                <th scope="col">Edit Card</th>
+                                <th scope="col">Manage</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td >
-                                    <img style="width:50px;" src="https://i.pinimg.com/236x/df/ed/00/dfed0051cf3051df61dfd545a50e02b2.jpg" class="img-tmbnail">
-                                </td>
-                                <td>Shirt</td>
-                                <!-- <td>Small</td> -->
-                                <!-- <td>
-                                    <div class="input-group w-75 align-middle justify-content-center">
-                                        <button id="minusButton" class="btn btn-outline-primary" type="button" onclick='decrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>-</button>
-                                        <input type="number" id="quantity" class="form-control border-primary text-center" style="width:20px" value="1" min="1">
-                                        <button id="plusButton" class="btn btn-outline-primary" type="button" onclick='incrementValue("#quantity");updateTotalPrice("#price","#quantity", "#total");'>+</button>
-                                    </div>
-                                </td> -->
-                                <td id="price">PKR 1000</td>
-                                <td id="total">PKR 5000</td>
-                                <td>
-                                    
-                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
-                                    <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
-                                </td>
-                                @include('Components.productDetail')
-                            </tr>
+                            @foreach($bagItems as $item)
+                                <tr>
+                                    <td >
+                                        <img style="width:50px;" src="{{ asset('storage/images/products/' . $item->productDetail->image) }}" class="img-tmbnail">
+                                    </td>
+                                    <td>{{ $item->productDetail->title }}</td>
+                                    <td>{{ $item->quantity }}</td>
+                                    <td>
+                                        @if($item->productDetail->discount > 0)
+                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
+                                            <br/>
+                                        @endif
+                                        <span>PKR {{ ceil($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) }}</span>
+                                    </td>
+                                    <td>PKR {{ ceil(($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) * $item->quantity) }}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
+                                        <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
+                                    </td>
+                                    {{-- @include('Components.productDetail') --}}
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

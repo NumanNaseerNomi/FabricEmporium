@@ -11,6 +11,7 @@ use App\Http\Controllers\ShowMoreController;
 // use App\Http\Controllers\CartController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ManageProducts as ManageProductsController;
+use App\Http\Controllers\Bag as BagController;
 
 
 use Illuminate\Http\Request;
@@ -45,10 +46,17 @@ Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"]
 Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
 Route::get('/myBag', function () {return view('myBag');})->middleware(['ifAuth']);
 
+Route::get('/myBag', [BagController::class, "showBag"]);
+Route::post('/addtoWishlist', [BagController::class, "addtoWishlist"]);
+Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"]);
+
 Route::get('/place-order', function () {
     return view('placeorder');
 });
 
+// Route::get('/myBag', function () {
+//     return view('myBag');
+// });
 
 Route::get('/test', function () {
     return view('manageProducts');
