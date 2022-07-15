@@ -48,7 +48,9 @@
 							<ul class="dropdown-menu dropdown-menu-end">
 								@if(Session::get('user'))
 									<li><a class="dropdown-item" href="{{ url('/myProfile') }}"><i class="fal fa-user me-2"></i>{{Session::get('user')->name}}</a></li>
-									<li><a class="dropdown-item" href="{{ url('/manageProducts') }}"><i class="fal fa-user-cog me-2"></i>Admin Panel</a></li>
+									@if(Session::get('user')->isAdmin)
+										<li><a class="dropdown-item" href="{{ url('/manageProducts') }}"><i class="fal fa-user-cog me-2"></i>Admin Panel</a></li>
+									@endif
 									<hr class="dropdown-divider">
 									<li><a class="dropdown-item" href="{{ url('/logout') }}"><i class="fal fa-power-off me-2"></i>Logout</a></li>
 								@else
