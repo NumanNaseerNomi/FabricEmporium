@@ -10,7 +10,7 @@ use App\Http\Controllers\ManageProducts as ManageProductsController;
 use App\Http\Controllers\Bag as BagController;
 
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
