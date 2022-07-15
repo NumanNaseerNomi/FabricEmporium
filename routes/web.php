@@ -55,10 +55,6 @@ Route::get('/place-order', function () {
 });
 
 
-Route::get('/test', function () {
-    return view('manageProducts');
-});
-
 Route::get('/testEmail', function () {
     $mailData = 
     [
