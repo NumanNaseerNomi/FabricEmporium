@@ -47,7 +47,7 @@ Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
 
 Route::get('/myBag', [BagController::class, "showBag"]);
 Route::post('/addtoWishlist', [BagController::class, "addtoWishlist"]);
-Route::post('/removeItem', [BagController::class, "removeItem"]);
+Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"]);
 
 Route::get('/place-order', function () {
     return view('placeorder');

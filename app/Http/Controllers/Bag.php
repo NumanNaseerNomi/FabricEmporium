@@ -44,7 +44,7 @@ class Bag extends Controller
         return redirect()->back();
     }
 
-    function removeItem(Request $request)
+    function removeFromWishlist(Request $request)
     {
         $item = BagModel::find($request->id);
         $item->delete();

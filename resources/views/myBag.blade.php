@@ -32,7 +32,7 @@
                                         <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
                                         {{-- <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button> --}}
                                         <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
-                                        <form method="post" action="{{ url('/removeItem') }}">
+                                        <form method="post" action="{{ url('/removeFromWishlist') }}">
                                             @csrf
                                             <input type="number" name="id" value="{{ $item->id }}" hidden required />
                                             <button type="submit" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
