@@ -20,7 +20,6 @@
 					<form action="{{ url('/showMore') }}" method="post">
 						@csrf
 						<input type="hidden" name="category" value="{{ $category }}" required>
-						<!-- <a class="btn bg-clr rounded-pill px-4 py-2 fs-6 text-white" href="{{ url('/showMore') }}">View More</a> -->
 						<button type="submit" class="btn btn-dark px-5">View More</button>
 					</form>
 				</div>
