@@ -1,14 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Illuminate\Support\Facades\Mail;
-// use App\Mail\TestEmail;
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ShowMoreController;
-// use App\Http\Controllers\SignAuthController;
-// use App\Http\Controllers\CartController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ManageProducts as ManageProductsController;
 use App\Http\Controllers\Bag as BagController;
