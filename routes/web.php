@@ -46,6 +46,8 @@ Route::get('/myBag', [BagController::class, "showBag"])->middleware(['ifAuth']);
 Route::post('/addToWishlist', [BagController::class, "addToWishlist"])->middleware(['ifAuth']);
 Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])->middleware(['ifAuth']);
 
+Route::post('/search', [ManageProductsController::class, "search"]);
+
 Route::get('/place-order', function () {
     return view('placeorder');
 });

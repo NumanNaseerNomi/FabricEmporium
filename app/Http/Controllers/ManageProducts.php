@@ -15,6 +15,21 @@ class ManageProducts extends Controller
         return view("manageProducts", ["products" => $products]);
     }
 
+    function search(Request $request)
+    {
+        $search = $request->search;
+
+        $products = ProductsModel::
+        where('title' , 'LIKE' ,'%'.$search.'%')->
+        orWhere('brand' , 'LIKE' ,'%'.$search.'%')->
+        orWhere('description' , 'LIKE' ,'%'.$search.'%')->
+        orWhere('price' , 'LIKE' ,'%'.$search.'%')->
+        orWhere('discount' , 'LIKE' ,'%'.$search.'%')->
+        orWhere('category' , 'LIKE' ,'%'.$search.'%')->get();
+                                    
+        return view('/showmore', ['products' => $products, 'search' => $search]);
+    }
+
     function updateProduct(Request $request)
     {
         $request->validate(

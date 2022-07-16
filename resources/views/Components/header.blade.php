@@ -20,9 +20,11 @@
 			</button>
 			<div class="collapse navbar-collapse " id="navbarScroll">
 				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll " style="--bs-scroll-height: 100px;">
-					<form class=" d-flex">
-						<input class="form-control me-2" type="search" placeholder="Search here...." aria-label="Search">
-						<i class="fa fa-search srch" style="font-size:24px"></i>
+					<form class="d-flex" method="post" action="{{ url('/search') }}">
+						@csrf
+						<input class="form-control me-2" name="search" type="search" placeholder="Search here...." aria-label="Search">
+						<button type="submit" class="btn btn-link"><i class="fa fa-search text-black" style="font-size:24px"></i></button>
+						<!-- <button type="submit"><i class="fa fa-search srch" style="font-size:24px"></i></button> -->
 					</form>
 				</ul>
 				<ul class="icons">
