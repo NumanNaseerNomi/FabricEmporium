@@ -49,7 +49,7 @@ Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])
 Route::post('/search', [ManageProductsController::class, "search"]);
 
 Route::get('/place-order', function () {
-    return view('placeorder');
+    return view('checkout');
 });
 
 Route::get('/changePassword', function () {
