@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Models\UsersModel;
 use App\Mail\SendEmail;
-use App\Mail\VerifyOTP;
 
 class AuthController extends Controller
 {
@@ -68,7 +67,13 @@ class AuthController extends Controller
         $user = UsersModel::create($request->all());
         $request->session()->put('verifyOTP', $user);
         
-        Mail::to($request->email)->send(new VerifyOTP($user, $otp));
+        $configs = new \stdClass;
+        $configs->view = "email.register";
+        $configs->subject = "Fabric Emporium: Registration";
+        $configs->user = $user;
+        $configs->otp = $otp;
+
+        Mail::to($request->email)->send(new SendEmail($configs));
         
         return redirect('/verifyOTP');
     }
