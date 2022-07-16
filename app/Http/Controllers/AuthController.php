@@ -102,6 +102,29 @@ class AuthController extends Controller
         }
     }
 
+    function updatePassword(Request $request)
+    {
+        $request->validate(
+            [
+                "_token" => "required",
+                "oldPassword" => "required",
+                "password" => "required|confirmed",
+            ]
+        );
+
+        $user = UsersModel::find(Session::get('user')->id);
+
+        if($user && Hash::check($request->oldPassword, $user->password))
+        {
+            $user->update(['password' => $request->password]);
+            return redirect()->back();
+        }
+        else
+        {
+            return back()->withInput();
+        }
+    }
+
     function logout(Request $request)
     {
         $request->session()->flush();

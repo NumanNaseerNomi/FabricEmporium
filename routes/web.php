@@ -24,6 +24,7 @@ use App\Http\Controllers\Bag as BagController;
 Route::get('/', [HomeController::class, "home"]);
 Route::get('/myProfile', [ProfileController::class, "viewProfile"])->middleware(['ifAuth']);
 Route::post('/updateProfile', [ProfileController::class, "updateProfile"])->middleware(['ifAuth']);
+Route::post('/updatePassword', [AuthController::class, "updatePassword"])->middleware(['ifAuth']);
 
 Route::get('/register', [AuthController::class, "registerView"])->middleware(['ifGuest']);
 Route::post('/register', [AuthController::class, "registerAuth"])->middleware(['ifGuest']);
