@@ -7,22 +7,20 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class VerifyOTP extends Mailable
+class SendEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
-    public $otp;
+    public $configs;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($user, $otp)
+    public function __construct($config)
     {
-        $this->user = $user;
-        $this->otp = $otp;
+        $this->configs = $config;
     }
 
     /**
@@ -32,6 +30,6 @@ class VerifyOTP extends Mailable
      */
     public function build()
     {
-        return $this->view('email.verifyOTP');
+        return $this->view($this->configs->view)->subject($this->configs->subject);
     }
 }

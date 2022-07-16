@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use Illuminate\Http\Request;
 use App\Models\UsersModel;
 
@@ -23,7 +24,7 @@ class ProfileController extends Controller
             ]
         );
 
-        $result = UsersModel::find($request->id);
+        $result = UsersModel::find(Session::get('user')->id);
         $result->update($request->all());
 
         $request->session()->put('user', $result);
