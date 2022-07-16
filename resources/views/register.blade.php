@@ -34,6 +34,11 @@
                         <button type="submit" class="btn btn-primary">Register</button>
                     </div>
                 </div>
+                <hr/>
+                <p>Already Registered?</p>
+                <div class="d-grid gap-2 col-6 mx-auto">
+                    <a class="btn btn-outline-primary" href="{{ url('/login') }}" role="button">Login</a>
+                </div>
             </form>
         </div>
     </div>
