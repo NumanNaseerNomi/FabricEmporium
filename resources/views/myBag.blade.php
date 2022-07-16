@@ -86,6 +86,26 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer">
+                <table class="table table-bordered table-striped table-hover text-center align-middle table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">Total Quantity</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                    <td>4</td>
+                                    <td>PKR 4000</td>
+                                    <td>PKR 8000<td>
+                                        
+                                    {{-- @include('Components.productDetail') --}}
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
