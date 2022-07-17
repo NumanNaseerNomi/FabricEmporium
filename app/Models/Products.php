@@ -23,4 +23,9 @@ class Products extends Model
     ];
     
     public $timestamps = false;
+    
+    public function comments()
+    {
+        return $this->hasMany(Comments::class, 'productId');
+    }
 }

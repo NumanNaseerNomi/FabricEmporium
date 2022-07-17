@@ -8,6 +8,7 @@ use App\Http\Controllers\ShowMoreController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ManageProducts as ManageProductsController;
 use App\Http\Controllers\Bag as BagController;
+use App\Http\Controllers\Comments as CommentsController;
 
 
 // use Illuminate\Http\Request;
@@ -50,6 +51,8 @@ Route::get('/myBag', function () {return view('myBag');})->middleware(['ifAuth']
 Route::get('/myBag', [BagController::class, "showBag"])->middleware(['ifAuth']);
 Route::post('/addToWishlist', [BagController::class, "addToWishlist"])->middleware(['ifAuth']);
 Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])->middleware(['ifAuth']);
+
+Route::post('/addComment', [CommentsController::class, "addComment"])->middleware(['ifAuth']);
 
 Route::post('/search', [ManageProductsController::class, "search"]);
 

@@ -62,31 +62,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <div class="accordion container pb-3" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button  p-1 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                            <i class="fal fa-comments me-2"></i><strong>Comments</strong>
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <form method="post" action="test">
-                                    <div class="input-group mb-3">
-                                        <textarea type="text" class="form-control" rows="1" placeholder="Type your commnet here..." aria-label="Comment" aria-describedby="button-addon2"></textarea>
-                                        <button class="btn btn-outline-primary" type="submit" id="button-addon2">Send</button>
-                                    </div>
-                                </form>
-                                <div class="overflow-auto" style="height: 150px;">
-                                    <p><span class="shadow-sm p-1 bg-light border rounded"><strong>User Name: </strong>Regular shadow</span></p>
-                                    <p><span class="shadow-sm p-1 bg-light border rounded"><strong>User Name: </strong>Regular shadow Regular shadow Regular shadow Regular shadow Regular shadow Regular shadow </span></p>
-                                    <p><span class="shadow-sm p-1 bg-light border rounded"><strong>User Name: </strong>Regular shadow</span></p>
-                                    <p><span class="shadow-sm p-1 bg-light border rounded"><strong>User Name: </strong>Regular shadow</span></p> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
+                @include('Components.comments')
             </div>
         </div>
     </div>
