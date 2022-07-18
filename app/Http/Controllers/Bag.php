@@ -28,7 +28,7 @@ class Bag extends Controller
     function addToWishlist(Request $request)
     {
         $userId = Session::get('user')->id;
-        $item = BagModel::where('userId', $userId)->where('productId', $request->id)->where('quantity', null)->get();
+        $item = BagModel::where('userId', $userId)->where('productId', $request->id)->where(function($query) {$query->where('quantity', null)->orWhere('quantity', '>', 0);})->get();
 
         if(!count($item))
         {
@@ -48,6 +48,26 @@ class Bag extends Controller
     {
         $item = BagModel::find($request->id);
         $item->delete();
+
+        return redirect()->back();
+    }
+
+    function addToShoppingBag(Request $request)
+    {
+        $item = BagModel::find($request->id);
+
+        if(!$item->quantity)
+        {
+            $item->update(["quantity" => 1]);
+        }
+
+        return redirect()->back();
+    }
+
+    function removeFromShoppingBag(Request $request)
+    {
+        $item = BagModel::find($request->id);
+        $item->update(["quantity" => null]);
 
         return redirect()->back();
     }

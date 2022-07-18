@@ -1,7 +1,7 @@
 @include('Components.header')
 <div class="container ">
     <div class="row">
-        <div class=" col-12 col-md-5 mb-3">
+        <div class="col-12 col-md-5 mb-3">
             <div class="card" style="width:100% !important;">
                 <h5 class="card-header"><i class="fal fa-heart me-1"></i>My Wishlist</h5>
                 <div class="card-body overflow-auto">
@@ -22,21 +22,32 @@
                                     </td>
                                     <td>{{ $item->productDetail->title }}</td>
                                     <td>
+                                        <span>PKR {{ $item->productDetail->getDiscountedPrice() }}</span>
                                         @if($item->productDetail->discount > 0)
-                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
                                             <br/>
+                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
                                         @endif
-                                        <span>PKR {{ ceil($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) }}</span>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
-                                        {{-- <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button> --}}
-                                        <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
-                                        <form method="post" action="{{ url('/removeFromWishlist') }}">
-                                            @csrf
-                                            <input type="number" name="id" value="{{ $item->id }}" hidden required />
-                                            <button type="submit" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
-                                        </form>
+                                        <!-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button> -->
+                                        <!-- {{-- <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button> --}} -->
+                                        <!-- <button type="button" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button> -->
+                                        <div class="row">
+                                            <div class="col m-0 p-0">
+                                                <form class="m-0 p-0" method="post" action="{{ url('/addToShoppingBag') }}">
+                                                    @csrf
+                                                    <input type="number" name="id" value="{{ $item->id }}" hidden required />
+                                                    <button type="submit" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
+                                                </form>
+                                            </div>
+                                            <div class="col m-0 p-0">
+                                                <form method="post" action="{{ url('/removeFromWishlist') }}">
+                                                    @csrf
+                                                    <input type="number" name="id" value="{{ $item->id }}" hidden required />
+                                                    <button type="submit" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach
@@ -69,16 +80,32 @@
                                     <td>{{ $item->productDetail->title }}</td>
                                     <td>{{ $item->quantity }}</td>
                                     <td>
+                                        <span>PKR {{ $item->productDetail->getDiscountedPrice() }}</span>
                                         @if($item->productDetail->discount > 0)
-                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
                                             <br/>
+                                            <span class="text-decoration-line-through text-danger">PKR {{ $item->productDetail->price }}</span>
                                         @endif
-                                        <span>PKR {{ ceil($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) }}</span>
                                     </td>
-                                    <td>PKR {{ ceil(($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) * $item->quantity) }}</td>
+                                    <td>PKR {{ $item->productDetail->getDiscountedPrice() }}</td>
+                                    <!-- <td>PKR {{ ceil(($item->productDetail->price - (($item->productDetail->price * $item->productDetail->discount) / 100)) * $item->quantity) }}</td> -->
                                     <td>
-                                        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button>
-                                        <button type="button" class="btn btn-outline-danger"><i class="fal fa-trash-alt"></i></button>
+                                        <!-- <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="far fa-eye"></i></button> -->
+                                        <div class="row">
+                                            <!-- <div class="col m-0 p-0">
+                                                <form class="m-0 p-0" method="post" action="{{ url('/addToShoppingBag') }}">
+                                                    @csrf
+                                                    <input type="number" name="id" value="{{ $item->id }}" hidden required />
+                                                    <button type="submit" class="btn btn-outline-success"><i class="fal fa-shopping-bag"></i></button>
+                                                </form>
+                                            </div> -->
+                                            <div class="col m-0 p-0">
+                                                <form method="post" action="{{ url('/removeFromShoppingBag') }}">
+                                                    @csrf
+                                                    <input type="number" name="id" value="{{ $item->id }}" hidden required />
+                                                    <button type="submit" class="btn btn-outline-primary"><i class="fal fa-heart"></i></button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </td>
                                     {{-- @include('Components.productDetail') --}}
                                 </tr>
@@ -86,10 +113,9 @@
                         </tbody>
                         <tfoot>
                             <tr>
-                                <th scope="col"></th>
-                                <th scope="col"></th>
-                                <th scope="col">Quantity</th>
-                                <th scope="col">Price</th>
+                                <th scope="col" colspan="2">TOTAL:</th>
+                                <th scope="col">{{ $bagItems->sum('quantity') }}</th>
+                                <!-- <th scope="col">{{ $bagItems }}</th> -->
                                 <th scope="col">Total Price</th>
                                 <th scope="col"></th>
                             </tr>

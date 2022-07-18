@@ -46,11 +46,12 @@ Route::post('/manageProducts', [ManageProductsController::class, "updateProduct"
 Route::post('/deleteProduct', [ManageProductsController::class, "deleteProduct"])->middleware(['ifAdmin']);
 
 Route::post('/showMore', [ShowMoreController::class, "ShowMore"]);
-Route::get('/myBag', function () {return view('myBag');})->middleware(['ifAuth']);
 
 Route::get('/myBag', [BagController::class, "showBag"])->middleware(['ifAuth']);
 Route::post('/addToWishlist', [BagController::class, "addToWishlist"])->middleware(['ifAuth']);
 Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])->middleware(['ifAuth']);
+Route::post('/addToShoppingBag', [BagController::class, "addToShoppingBag"])->middleware(['ifAuth']);
+Route::post('/removeFromShoppingBag', [BagController::class, "removeFromShoppingBag"])->middleware(['ifAuth']);
 
 Route::post('/addComment', [CommentsController::class, "addComment"])->middleware(['ifAuth']);
 
