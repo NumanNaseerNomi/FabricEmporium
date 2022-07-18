@@ -1,5 +1,5 @@
 @include('Components.header')
-@include('Components.navbar')
+
 <div class="container-fluid">
 	@include('Components.banners')
 	<div class="container">
