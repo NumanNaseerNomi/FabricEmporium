@@ -28,4 +28,9 @@ class Products extends Model
     {
         return $this->hasMany(Comments::class, 'productId');
     }
+
+    public function getDiscountedPrice()
+    {
+        return ceil($this->price - (($this->price * $this->discount) / 100));
+    }
 }
