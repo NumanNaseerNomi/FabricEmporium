@@ -72,6 +72,7 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php $totalPrice = 0; @endphp
                             @foreach($bagItems as $item)
                                 <tr>
                                     <td >
@@ -109,15 +110,22 @@
                                     </td>
                                     {{-- @include('Components.productDetail') --}}
                                 </tr>
+                                @php $totalPrice = $totalPrice + $item->productDetail->getDiscountedPrice(); @endphp
                             @endforeach
                         </tbody>
                         <tfoot>
                             <tr>
                                 <th scope="col" colspan="2">TOTAL:</th>
                                 <th scope="col">{{ $bagItems->sum('quantity') }}</th>
-                                <!-- <th scope="col">{{ $bagItems }}</th> -->
-                                <th scope="col">Total Price</th>
-                                <th scope="col"></th>
+                                <th scope="col">PKR {{ $totalPrice }}</th>
+                                <th scope="col">PKR {{ $totalPrice }}</th>
+                                <!-- <th scope="col">Total Price</th> -->
+                                <th scope="col">
+                                    <form method="post" action="{{ url('/checkout') }}">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary btn-sm">Checkout</button>
+                                    </form>
+                                </th>
                             </tr>
                         </tfoot>
                     </table>

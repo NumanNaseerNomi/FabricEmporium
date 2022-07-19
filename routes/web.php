@@ -53,6 +53,8 @@ Route::post('/removeFromWishlist', [BagController::class, "removeFromWishlist"])
 Route::post('/addToShoppingBag', [BagController::class, "addToShoppingBag"])->middleware(['ifAuth']);
 Route::post('/removeFromShoppingBag', [BagController::class, "removeFromShoppingBag"])->middleware(['ifAuth']);
 
+Route::post('/checkout', [BagController::class, "checkout"])->middleware(['ifAuth']);
+
 Route::post('/addComment', [CommentsController::class, "addComment"])->middleware(['ifAuth']);
 
 Route::post('/search', [ManageProductsController::class, "search"]);

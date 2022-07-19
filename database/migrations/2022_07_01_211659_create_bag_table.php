@@ -20,6 +20,7 @@ return new class extends Migration
                 $table->integer('userId');
                 $table->integer('productId');
                 $table->integer('quantity')->nullable();
+                $table->integer('orderId')->nullable();
             }
         );
     }

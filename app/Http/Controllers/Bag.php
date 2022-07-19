@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Session;
 use App\Models\Bag as BagModel;
+use App\Models\Orders as OrdersModel;
 
 use Illuminate\Http\Request;
 
@@ -68,6 +69,19 @@ class Bag extends Controller
     {
         $item = BagModel::find($request->id);
         $item->update(["quantity" => null]);
+
+        return redirect()->back();
+    }
+
+    function checkout(Request $request)
+    {
+        $request->validate(["_token" => "required",]);
+        $userId = Session::get('user')->id;
+
+        $bagItems = BagModel::where('userId', $userId)->where('quantity', '>', 0)->get();
+        $order = OrdersModel::create(["userId" => $userId, "address" => "dummy"]);
+        
+        BagModel::whereIn('id', $bagItems->pluck("id")->toArray())->update(['orderId' => $order->id]);
 
         return redirect()->back();
     }

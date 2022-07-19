@@ -17,8 +17,8 @@ return new class extends Migration
             function (Blueprint $table)
             {
                 $table->id();
-                // $table->integer('userId');
-                $table->string('bagId');
+                $table->integer('userId');
+                $table->string('address');
             }
         );
     }
